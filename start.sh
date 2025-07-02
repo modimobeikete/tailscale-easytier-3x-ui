@@ -4,7 +4,6 @@ wget -O /app/easytier.sh "https://raw.githubusercontent.com/EasyTier/EasyTier/ma
 echo Easytier installed
 /app/tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
 /app/tailscale up --auth-key=${TAILSCALE_AUTHKEY} --hostname=cloudrun-app --ssh --accept-routes
-/opt/easytier/easytier-core -w ${EASYTIERWEB_USERNAME} &
 echo Tailscale started
 ALL_PROXY=socks5://localhost:1055/
 
@@ -49,4 +48,5 @@ if ! systemctl restart x-ui; then
 fi
 
 echo "x-ui installation completed successfully"
+/opt/easytier/easytier-core -w ${EASYTIERWEB_USERNAME}
 wait
