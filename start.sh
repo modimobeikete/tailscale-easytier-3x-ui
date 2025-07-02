@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "Downloading easytier"
-wget -O /app/easytier.sh "https://raw.githubusercontent.com/EasyTier/EasyTier/main/script/install.sh" && bash /app/easytier.sh install --no-gh-proxy --skip-folder-verify
+wget -O /app/easytier.sh "https://raw.githubusercontent.com/EasyTier/EasyTier/main/script/install.sh" && bash /app/easytier.sh install --no-gh-proxy
 echo Easytier installed
 /app/tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
 /app/tailscale up --auth-key=${TAILSCALE_AUTHKEY} --hostname=cloudrun-app --ssh --accept-routes
