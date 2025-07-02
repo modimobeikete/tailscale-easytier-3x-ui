@@ -48,5 +48,5 @@ if ! systemctl restart x-ui; then
 fi
 
 echo "x-ui installation completed successfully"
-/opt/easytier/easytier-core -w ${EASYTIERWEB_USERNAME}
+/opt/easytier/easytier-core -w ${EASYTIERWEB_USERNAME} ${EXTRA_ARGS}
 wait
