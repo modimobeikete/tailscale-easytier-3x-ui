@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get install -y wget && \
     apt-get install -y systemctl && \
     apt-get install -y curl && \
+    apt-get install -y unzip&& \
     rm -rf /var/lib/apt/lists/*
 
 # Copy binary to production image.
